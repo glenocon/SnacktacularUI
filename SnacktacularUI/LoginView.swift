@@ -19,6 +19,7 @@ struct LoginView: View {
     @State private var showingAlert: Bool = false
     @State private var alertMessage: String = ""
     @State private var buttonDisabled = true
+    @State private var presentSheet: Bool = false
     @FocusState private var focusField: Field?
     
     var body: some View {
@@ -86,6 +87,16 @@ struct LoginView: View {
         .alert(alertMessage, isPresented: $showingAlert) {
             Button("OK", role: .cancel) { }
         }
+        .onAppear() {
+            if Auth.auth().currentUser != nil {
+                print("Log in successful")
+                presentSheet = true
+            }
+            
+        }
+        .fullScreenCover(isPresented: $presentSheet) {
+            ListView()
+        }
     }
     
     func enableButton() {
@@ -103,11 +114,13 @@ struct LoginView: View {
                 showingAlert = true
             } else {
                 print("😎 Registration success!")
-                alertMessage = "Regestered successfully! email: \(email) password: \(password)"
-                showingAlert = true
-                email = ""
-                password = ""
-                focusField = .email
+                presentSheet = true
+//                alertMessage = "Regestered successfully! email: \(email) password: \(password)"
+//                showingAlert = true
+//                email = ""
+//                password = ""
+//                focusField = .email
+//                showingAlert = true
                 
                 //TODO Load ListView
             }
@@ -121,9 +134,10 @@ struct LoginView: View {
                 showingAlert = true
             } else {
                 print("🪵 LOGIN success!")
-                //TODO Load ListView
-                alertMessage = "Regestered successfully! email: \(email) password: \(password)"
-                showingAlert = true
+                //presentSheet = true
+//                alertMessage = "Regestered successfully! email: \(email) password: \(password)"
+//                showingAlert = true
+                presentSheet = true
             }
         }
     }
