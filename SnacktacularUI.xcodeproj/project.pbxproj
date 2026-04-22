@@ -15,6 +15,9 @@
 		76D2F0982F8E0C2200EA053B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D2F0902F8E0C2200EA053B /* Assets.xcassets */; };
 		76D2F0992F8E0C2200EA053B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76D2F0912F8E0C2200EA053B /* GoogleService-Info.plist */; };
 		76D2F09C2F8E0C8E00EA053B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2F09B2F8E0C8E00EA053B /* ListView.swift */; };
+		76D70FFC2F982B47004E4B42 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D70FFB2F982B47004E4B42 /* Spot.swift */; };
+		76D70FFE2F982C41004E4B42 /* SpotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D70FFD2F982C41004E4B42 /* SpotDetailView.swift */; };
+		76D710002F98359B004E4B42 /* SpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D70FFF2F98359B004E4B42 /* SpotViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		76D2F0932F8E0C2200EA053B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		76D2F0942F8E0C2200EA053B /* SnacktacularUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacktacularUIApp.swift; sourceTree = "<group>"; };
 		76D2F09B2F8E0C8E00EA053B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		76D70FFB2F982B47004E4B42 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		76D70FFD2F982C41004E4B42 /* SpotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailView.swift; sourceTree = "<group>"; };
+		76D70FFF2F98359B004E4B42 /* SpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				76D2F0942F8E0C2200EA053B /* SnacktacularUIApp.swift */,
+				76D70FFB2F982B47004E4B42 /* Spot.swift */,
+				76D70FFF2F98359B004E4B42 /* SpotViewModel.swift */,
 				76D2F0932F8E0C2200EA053B /* LoginView.swift */,
 				76D2F09B2F8E0C8E00EA053B /* ListView.swift */,
+				76D70FFD2F982C41004E4B42 /* SpotDetailView.swift */,
 				76D2F0902F8E0C2200EA053B /* Assets.xcassets */,
 				76D2F0912F8E0C2200EA053B /* GoogleService-Info.plist */,
 				76D2F0922F8E0C2200EA053B /* Info.plist */,
@@ -149,9 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D70FFE2F982C41004E4B42 /* SpotDetailView.swift in Sources */,
 				76D2F0962F8E0C2200EA053B /* LoginView.swift in Sources */,
+				76D710002F98359B004E4B42 /* SpotViewModel.swift in Sources */,
 				76D2F0972F8E0C2200EA053B /* SnacktacularUIApp.swift in Sources */,
 				76D2F09C2F8E0C8E00EA053B /* ListView.swift in Sources */,
+				76D70FFC2F982B47004E4B42 /* Spot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -135,8 +135,7 @@ struct LoginView: View {
             } else {
                 print("🪵 LOGIN success!")
                 //presentSheet = true
-//                alertMessage = "Regestered successfully! email: \(email) password: \(password)"
-//                showingAlert = true
+//   
                 presentSheet = true
             }
         }

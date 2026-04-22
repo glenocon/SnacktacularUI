@@ -8,16 +8,25 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
 struct ListView: View {
+    @FirestoreQuery(collectionPath: "spots") var spots: [Spot] // loads all the "spots" documents into the array varible named spots
+    @State private var sheetIsPresented: Bool = false
     @Environment(\.dismiss) private var dismiss
-    @State private var alertMessage: String = "Error could not logout"
+    
     
     var body: some View {
         NavigationStack {
-            List {
-                Text("List Items Go Hear")
+            List(spots) { spot in
+                NavigationLink {
+                    SpotDetailView(spot: spot)
+                } label: {
+                    Text(spot.name)
+                        .font(.title2)
+                }
             }
+ 
             .listStyle(.plain)
             .navigationTitle("Snack Spopts:")
             .toolbar {
@@ -28,21 +37,24 @@ struct ListView: View {
                             print("🪵➡️ Log out successful!")
                             dismiss()
                         } catch {
-//                            .alert(alertMessage, isPresented: $showingAlert) {
-//                                Button("OK", role: .cancel) { }
+                           
                         }
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                     //TODO:
+                        sheetIsPresented.toggle()
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
             }
+            .sheet(isPresented: $sheetIsPresented) {
+                NavigationStack{
+                    SpotDetailView(spot: Spot())
+                }
+            }
         }
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
